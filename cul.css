@@ -1,0 +1,45 @@
+   *{
+            padding: 0px;
+            margin: 0px;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            text-align: center;
+            justify-content: certer;
+            align-items: center;
+            min-height: 100vh;
+                    }
+
+      #div1{
+        text-align: center;
+        padding: 40px;
+        margin-left: 500px;
+        background-color: lightblue;
+        border-radius: 8px;
+      }
+      input{
+        border-radius: 8px;
+        height: 30px;
+        text-align: right;
+      }
+      #div2{
+        text-align: left;
+        margin-top: 15px;
+
+      }
+      button{
+        border-radius: 5px;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+      }
+      button:hover {
+        background-color: gray;
+        color: white;
+      }
+     .equal {
+        width: 85px;
+     }
+
+      

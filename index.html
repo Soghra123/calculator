@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="cul.css">
+	
+</head>
+<body>
+	<div id="div1">
+		<div class="output">
+		<input type="text" id="display" class="text" placeholder="0" value=""></input>
+		</div>
+	<div id="div2">
+		<button onclick="clearDisplay('AC')">AC</button>
+		<button onclick="deletelast('DEL')">DEL</button>
+		<button onclick="percentage('%')">%</button>
+		<button onclick="setOperator('/')">/</button><br>
+		<button onclick="addNumber('7')">7</button>
+		<button onclick="addNumber('8')">8</button>
+		<button onclick="addNumber('9')">9</button>
+		<button onclick="setOperator('*')">x</button><br>
+		<button onclick="addNumber('4')">4</button>
+		<button onclick="addNumber('5')">5</button>
+		<button onclick="addNumber('6')">6</button>
+		<button onclick="setOperator('-')">-</button><br>
+		<button onclick="addNumber('1')">1</button>
+		<button onclick="addNumber('2')">2</button>
+		<button onclick="addNumber('3')">3</button>
+		<button onclick="setOperator('+')">+</button><br>
+		<button onclick="addNumber('0')">0</button>
+		<button onclick="addNumber('.')">.</button>
+		<button  class="equal" onclick="calculate()">=</button>
+	</div>
+   </div>
+<script>
+	function addNumber(number) {
+		document.getElementById("display").value += number;
+	}
+	let firstNumber = "";
+	let operator = "";
+	function setOperator(op) {
+		firstNumber=
+		document.getElementById("display").value;
+		operator= op;
+		document.getElementById("display").value += op;
+	}
+
+
+	function calculate() {
+		let display = 
+		document.getElementById("display").value;
+
+		let secondNumber = 
+		display.split(operator)[1];
+		let result ;
+
+		if(operator === "+") {
+			result = 
+			Number(firstNumber) + 
+			Number(secondNumber);
+		}
+
+		else if (operator === "-"){
+			result = Number(firstNumber) -
+			Number(secondNumber)
+		}
+		else if (operator === "*"){
+			result = Number(firstNumber) *
+			Number(secondNumber)
+		}
+		else if (operator === "/"){
+			result = Number(firstNumber)/(secondNumber)
+		}
+		display = result;
+
+
+		document.getElementById("display").value = display;
+	}
+	function percentage() {
+		let value = 
+		document.getElementById("display").value;
+		document.getElementById("display").value = Number(value) / 100;
+	}
+
+
+	function clearDisplay() {
+		document.getElementById("display").value = "";
+		firstNumber="";
+		operator= "";
+			}
+	function deletelast() {
+		let display = 
+		document.getElementById("display");
+		display.value = 
+		display.value.slice(0,-1);
+	}
+</script>
+
+</body>
+</html>
